@@ -60,7 +60,6 @@
       transform: scale(1.05);
     }
 
-    /* Animación corazones */
     .heart {
       position: fixed;
       bottom: -10px;
@@ -78,14 +77,12 @@
 </head>
 <body>
 
-  <!-- Frase inicial con el botón -->
   <div id="start">
     <h1>Feliz Día de las Flores Amarillas 🌻</h1>
     <h2>21 de Septiembre</h2>
     <button onclick="openCard()">Abrir mi corazón 💛</button>
   </div>
 
-  <!-- Contenido oculto -->
   <div id="content" class="hidden">
     <div class="card">
       <h2>Para Lu &lt;3</h2>
@@ -106,7 +103,6 @@
       </p>
     </div>
 
-    <!-- Reproductor YouTube -->
     <div style="margin-top:30px;">
       <iframe width="100%" height="166" 
         src="https://www.youtube.com/embed/FleKc0_y7w4?autoplay=1" 
@@ -120,12 +116,10 @@
 
   <script>
     function openCard() {
-      // Cambiar fondo a un campo de flores amarillas
-      document.body.style.backgroundImage = "url('https://cdn.pixabay.com/photo/2016/08/24/23/37/sunflowers-1616728_1280.jpg')";
+      document.body.style.backgroundImage = "url('fondo.jpg')";
       document.getElementById("start").style.display = "none";
       document.getElementById("content").classList.remove("hidden");
 
-      // lanzar corazones amarillos animados
       setInterval(() => {
         const heart = document.createElement("div");
         heart.className = "heart";
