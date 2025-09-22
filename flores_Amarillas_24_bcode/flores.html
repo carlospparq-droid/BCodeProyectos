@@ -8,10 +8,13 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom, #fff7c2, #ffe680);
       color: #333;
       text-align: center;
       overflow-x: hidden;
+      background: #fff7c2;
+      background-size: cover;
+      background-position: center;
+      transition: background 1s ease-in-out;
     }
 
     h1 {
@@ -20,17 +23,22 @@
       margin-top: 1em;
     }
 
+    h2 {
+      color: #666;
+      margin-bottom: 1em;
+    }
+
     .hidden {
       display: none;
     }
 
     .card {
-      background: white;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 16px;
       padding: 20px;
       margin: 20px auto;
-      max-width: 600px;
-      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+      max-width: 650px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.2);
       text-align: left;
       line-height: 1.6;
     }
@@ -43,7 +51,7 @@
       font-size: 1.2em;
       border-radius: 30px;
       cursor: pointer;
-      margin-top: 50px;
+      margin: 20px;
       box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
       transition: transform 0.2s;
     }
@@ -56,10 +64,10 @@
     .heart {
       position: fixed;
       bottom: -10px;
-      font-size: 24px;
+      font-size: 28px;
       animation: floatUp 6s linear infinite;
-      color: red;
-      opacity: 0.7;
+      color: gold;
+      opacity: 0.8;
     }
 
     @keyframes floatUp {
@@ -70,16 +78,15 @@
 </head>
 <body>
 
-  <button onclick="openCard()">Abrir mi corazón 💛</button>
-
-  <div id="content" class="hidden">
+  <!-- Frase inicial con el botón -->
+  <div id="start">
     <h1>Feliz Día de las Flores Amarillas 🌻</h1>
     <h2>21 de Septiembre</h2>
+    <button onclick="openCard()">Abrir mi corazón 💛</button>
+  </div>
 
-    <img src="https://cdn.pixabay.com/photo/2017/08/06/22/01/flowers-2595862_1280.jpg" 
-         alt="Flores Amarillas" 
-         style="max-width:100%;border-radius:12px;margin:20px 0;">
-
+  <!-- Contenido oculto -->
+  <div id="content" class="hidden">
     <div class="card">
       <h2>Para Lu &lt;3</h2>
       <p>
@@ -113,15 +120,17 @@
 
   <script>
     function openCard() {
-      document.querySelector("button").style.display = "none";
+      // Cambiar fondo a un campo de flores amarillas
+      document.body.style.backgroundImage = "url('https://cdn.pixabay.com/photo/2016/08/24/23/37/sunflowers-1616728_1280.jpg')";
+      document.getElementById("start").style.display = "none";
       document.getElementById("content").classList.remove("hidden");
 
-      // lanzar corazones animados
+      // lanzar corazones amarillos animados
       setInterval(() => {
         const heart = document.createElement("div");
         heart.className = "heart";
         heart.style.left = Math.random() * 100 + "vw";
-        heart.textContent = "❤️";
+        heart.textContent = "💛";
         heart.style.animationDuration = (3 + Math.random() * 3) + "s";
         document.body.appendChild(heart);
         setTimeout(() => heart.remove(), 6000);
