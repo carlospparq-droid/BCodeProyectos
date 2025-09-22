@@ -11,19 +11,17 @@
       background: linear-gradient(to bottom, #fff7c2, #ffe680);
       color: #333;
       text-align: center;
-      padding: 20px;
+      overflow-x: hidden;
     }
 
     h1 {
-      font-size: 2.2em;
+      font-size: 2em;
       color: #e4a700;
-      margin-bottom: 0.3em;
+      margin-top: 1em;
     }
 
-    h2 {
-      font-size: 1.3em;
-      color: #555;
-      margin-top: 0;
+    .hidden {
+      display: none;
     }
 
     .card {
@@ -33,70 +31,102 @@
       margin: 20px auto;
       max-width: 600px;
       box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
-    }
-
-    .card p {
-      text-align: justify;
+      text-align: left;
       line-height: 1.6;
-      font-size: 1em;
     }
 
-    .firma {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: right;
+    button {
+      background: #e4a700;
+      border: none;
+      color: white;
+      padding: 15px 25px;
+      font-size: 1.2em;
+      border-radius: 30px;
+      cursor: pointer;
+      margin-top: 50px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     }
 
-    img {
-      max-width: 100%;
-      border-radius: 12px;
-      margin: 20px 0;
+    button:hover {
+      transform: scale(1.05);
     }
 
-    /* Responsivo */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 1.8em;
-      }
-      h2 {
-        font-size: 1.1em;
-      }
-      .card p {
-        font-size: 0.95em;
-      }
+    /* Animación corazones */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 24px;
+      animation: floatUp 6s linear infinite;
+      color: red;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(1.5); opacity: 0; }
     }
   </style>
 </head>
 <body>
-  <h1>Feliz Día de las Flores Amarillas 🌻</h1>
-  <h2>21 de Septiembre</h2>
 
-  <img src="https://cdn.pixabay.com/photo/2017/08/06/22/01/flowers-2595862_1280.jpg" alt="Flores Amarillas">
+  <button onclick="openCard()">Abrir mi corazón 💛</button>
 
-  <div class="card">
-    <h2>Para Lu &lt;3</h2>
-    <p>
-      En este Día de las Flores Amarillas, quiero expresarte todo lo que siento en mi corazón. Agradecerte por ser parte de mi vida.
-    </p>
-    <p>
-      Eres como un campo de flores amarillas que ilumina mis días, llenando mi vida de alegría y color. Cada momento a tu lado son risas y recuerdos que atesoro profundamente.
-    </p>
-    <p>
-      Recuerdo la primera vez en la playa que miré tu sonrisa de forma diferente y supe que ya estaba enamorado de ti. Tu amor es como el amarillo de estas flores: cálido, vibrante y lleno de vida. Tu risa es la melodía más dulce que he escuchado, y tu cariño es el regalo más valioso que he recibido.
-    </p>
-    <p>
-      Eres mi inspiración, mi fortaleza y mi razón para ser mejor cada día. Gracias por elegirme, por quererme, por quedarte pese a mi mal momento y por ser tú. Perdóname si no pude cumplir un bonito día y llenar tus expectativas, estoy esforzándome por ser mejor para ti.
-    </p>
-    <p class="firma">
-      Con todo mi Amor para ti.<br>
-      De Carlos
-    </p>
+  <div id="content" class="hidden">
+    <h1>Feliz Día de las Flores Amarillas 🌻</h1>
+    <h2>21 de Septiembre</h2>
+
+    <img src="https://cdn.pixabay.com/photo/2017/08/06/22/01/flowers-2595862_1280.jpg" 
+         alt="Flores Amarillas" 
+         style="max-width:100%;border-radius:12px;margin:20px 0;">
+
+    <div class="card">
+      <h2>Para Lu &lt;3</h2>
+      <p>
+        En este Día de las Flores Amarillas, quiero expresarte todo lo que siento en mi corazón. Agradecerte por ser parte de mi vida.
+      </p>
+      <p>
+        Eres como un campo de flores amarillas que ilumina mis días, llenando mi vida de alegría y color. Cada momento a tu lado son risas y recuerdos que atesoro profundamente.
+      </p>
+      <p>
+        Recuerdo la primera vez en la playa que miré tu sonrisa de forma diferente y supe que ya estaba enamorado de ti. Tu amor es como el amarillo de estas flores: cálido, vibrante y lleno de vida. Tu risa es la melodía más dulce que he escuchado, y tu cariño es el regalo más valioso que he recibido.
+      </p>
+      <p>
+        Eres mi inspiración, mi fortaleza y mi razón para ser mejor cada día. Gracias por elegirme, por quererme, por quedarte pese a mi mal momento y por ser tú. Perdóname si no pude cumplir un bonito día y llenar tus expectativas, estoy esforzándome por ser mejor para ti.
+      </p>
+      <p style="text-align:right;font-weight:bold;">
+        Con todo mi Amor para ti.<br>De Carlos
+      </p>
+    </div>
+
+    <!-- Reproductor YouTube -->
+    <div style="margin-top:30px;">
+      <iframe width="100%" height="166" 
+        src="https://www.youtube.com/embed/FleKc0_y7w4?autoplay=1" 
+        title="wave to earth - bad" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
 
-  <!-- Música de fondo -->
-  <audio autoplay loop controls>
-    <source src="https://files.catbox.moe/8k3y6x.mp3" type="audio/mpeg">
-    Tu navegador no soporta audio.
-  </audio>
+  <script>
+    function openCard() {
+      document.querySelector("button").style.display = "none";
+      document.getElementById("content").classList.remove("hidden");
+
+      // lanzar corazones animados
+      setInterval(() => {
+        const heart = document.createElement("div");
+        heart.className = "heart";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.textContent = "❤️";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6000);
+      }, 500);
+    }
+  </script>
 </body>
 </html>
