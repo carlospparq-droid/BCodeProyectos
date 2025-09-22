@@ -1,57 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Día de las Flores Amarillas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Arial:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flores Amarillas 🌻</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom, #fff7c2, #ffe680);
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.2em;
+      color: #e4a700;
+      margin-bottom: 0.3em;
+    }
+
+    h2 {
+      font-size: 1.3em;
+      color: #555;
+      margin-top: 0;
+    }
+
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 600px;
+      box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+    }
+
+    .card p {
+      text-align: justify;
+      line-height: 1.6;
+      font-size: 1em;
+    }
+
+    .firma {
+      margin-top: 20px;
+      font-weight: bold;
+      text-align: right;
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 12px;
+      margin: 20px 0;
+    }
+
+    /* Responsivo */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.8em;
+      }
+      h2 {
+        font-size: 1.1em;
+      }
+      .card p {
+        font-size: 0.95em;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="matrix-flowers" id="matrixFlowers"></div>
-    
-    <div class="card">
-        <div class="header">
-            <h1>Feliz Día de las<br>Flores Amarillas</h1>
-            <div class="date">21 de Septiembre</div>
-        </div>
-        <button class="music-btn" id="musicBtn">♪</button>
-        <div class="photo-frame">
-            <img src="https://bcodestorague.anteroteobaldob.workers.dev/share/anteroteobaldob_gmail_com/IMG/ramo%20rosas%20amarillas.png" alt="Flores Amarillas">
-        </div>
+  <h1>Feliz Día de las Flores Amarillas 🌻</h1>
+  <h2>21 de Septiembre</h2>
 
-        <p class="message" style="animation-delay: 0.3s;">
-            En este día especial, quiero que sepas...
-        </p>
+  <img src="https://cdn.pixabay.com/photo/2017/08/06/22/01/flowers-2595862_1280.jpg" alt="Flores Amarillas">
 
-        <!-- <p class="message" style="animation-delay: 0.6s;">Eres la luz que ilumina mi vida como el amarillo de estas flores.</p> -->
+  <div class="card">
+    <h2>Para Lu &lt;3</h2>
+    <p>
+      En este Día de las Flores Amarillas, quiero expresarte todo lo que siento en mi corazón. Agradecerte por ser parte de mi vida.
+    </p>
+    <p>
+      Eres como un campo de flores amarillas que ilumina mis días, llenando mi vida de alegría y color. Cada momento a tu lado son risas y recuerdos que atesoro profundamente.
+    </p>
+    <p>
+      Recuerdo la primera vez en la playa que miré tu sonrisa de forma diferente y supe que ya estaba enamorado de ti. Tu amor es como el amarillo de estas flores: cálido, vibrante y lleno de vida. Tu risa es la melodía más dulce que he escuchado, y tu cariño es el regalo más valioso que he recibido.
+    </p>
+    <p>
+      Eres mi inspiración, mi fortaleza y mi razón para ser mejor cada día. Gracias por elegirme, por quererme, por quedarte pese a mi mal momento y por ser tú. Perdóname si no pude cumplir un bonito día y llenar tus expectativas, estoy esforzándome por ser mejor para ti.
+    </p>
+    <p class="firma">
+      Con todo mi Amor para ti.<br>
+      De Carlos
+    </p>
+  </div>
 
-        <button class="flower-btn" id="flowerBtn">🌼 Abre Mi Corazón</button>
-
-        <div class="signature">Para Ti  con Amor.</div>
-    </div>
-
-    <div class="modal" id="letterModal">
-        <span class="close-btn" id="closeBtn">×</span>
-        <div class="modal-content">
-            <div class="torn-paper">
-                <h2 class="letter-title">Para Mi Amor</h2>
-                
-                <div class="letter-content">
-                    <p>Querida  Mia,</p>
-                    <p>En este Día de las Flores Amarillas, quiero expresarte todo lo que siento en mi corazón.</p>
-                    <p>Eres como un campo de flores amarillas que ilumina mis días, llenando mi vida de alegría y color. Cada momento a tu lado es un tesoro que atesoro profundamente.</p>
-                    <p>Recuerdo la primera vez que miré tu sonrisa de forma diferente y supe que ya estaba enamorado de ti.</p>
-                    <p>Tu amor es como el amarillo de estas flores: cálido, vibrante y lleno de vida. Tu risa es la melodía más dulce que he escuchado, y tu cariño es el regalo más valioso que he recibido.</p>
-                    <!-- <p>En este día, quiero prometerte que siempre estaré a tu lado, en las buenas y en las malas, apoyándote, amándote y construyendo un futuro juntos.</p> -->
-                    <p>Eres mi inspiración, mi fortaleza y mi razón para ser mejor cada día. Gracias por elegirme, por quererme y por ser tú.</p>
-                </div>
-                
-                <div class="letter-signature">Con todo mi Amor.</div>
-            </div>
-        </div>
-    </div>
+  <!-- Música de fondo -->
+  <audio autoplay loop controls>
+    <source src="https://files.catbox.moe/8k3y6x.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
 </body>
-<script src="js/script.js"></script>
 </html>
